@@ -12,7 +12,7 @@ function Hero() {
         justifyContent: "center",
         alignItems: "center",
         textAlign: "center",
-        padding: "0 20px",
+        padding: "120px 20px 40px",
         position: "relative",
         overflow: "hidden",
       }}
