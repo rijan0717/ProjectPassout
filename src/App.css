@@ -38,7 +38,7 @@ body {
 
 /* MOBILE */
 @media (max-width: 768px) {
-  #hero {
+  .desktop-nav {
     display: none !important;
   }
   
