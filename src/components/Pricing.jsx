@@ -4,47 +4,73 @@ import { FiCheck } from "react-icons/fi";
 const plans = [
   {
     name: "Basic",
-    price: "Rs. 500",
-    description: "Perfect for simple projects",
+    badge: "Best for Portfolio Projects",
+    price: "Rs. 2,500",
+    description:
+      "Perfect for portfolios, personal websites, and simple frontend projects.",
     features: [
-      "1 ready-made project",
-      "Source code included",
-      "Basic documentation",
-      "Email support",
+      "React Frontend Development",
+      "Responsive UI/UX Design",
+      "Modern Landing Page",
+      "WhatsApp Integration",
+      "Contact Form Setup",
+      "Basic SEO Optimization",
+      "Vercel Deployment",
+      "Source Code Included",
+      "Project Documentation",
+      "1 Free Revision",
     ],
     highlighted: false,
+    glow: "rgba(99, 102, 241, 0.15)",
+    border: "rgba(99, 102, 241, 0.3)",
   },
+
   {
     name: "Standard",
-    price: "Rs. 1,500",
-    description: "Most popular choice",
+    badge: "⭐ Most Popular",
+    price: "Rs. 5,000",
+    description:
+      "Complete frontend and backend project setup — best for university submissions.",
     features: [
-      "Custom project development",
-      "Full source code",
-      "Complete documentation",
-      "PPT & Report included",
-      "3 revisions",
-      "WhatsApp support",
+      "Frontend + Backend Development",
+      "React / Next.js / Laravel / WordPress",
+      "MySQL / MongoDB Database Setup",
+      "Authentication System",
+      "Admin Dashboard",
+      "Khalti Payment Integration",
+      "API Integration",
+      "Source Code Included",
+      "Complete Documentation",
+      "3 Free Revisions",
     ],
     highlighted: true,
+    glow: "rgba(124, 58, 237, 0.2)",
+    border: "#7c3aed",
   },
+
   {
     name: "Premium",
-    price: "Rs. 3,000",
-    description: "For complex final year projects",
+    badge: "Business Growth Package",
+    price: "Rs. 10,000",
+    description:
+      "Advanced full-stack solution with live deployment and support — best for online stores and businesses looking to grow.",
     features: [
-      "Advanced custom project",
-      "Full source code",
-      "Complete documentation",
-      "PPT, Report & Viva prep",
-      "Unlimited revisions",
-      "Priority support",
-      "Live demo setup",
+      "Everything Included in Standard",
+      "Live Hosting Setup",
+      "Custom Domain Configuration",
+      "Khalti / eSewa Integration",
+      "Advanced Admin Panel",
+      "E-commerce Features",
+      "Performance Optimization",
+      "SEO Optimization",
+      "Unlimited Revisions",
+      "1 Month Support Included",
     ],
     highlighted: false,
+    glow: "rgba(168, 85, 247, 0.15)",
+    border: "rgba(168, 85, 247, 0.3)",
   },
 ];
-
 function Pricing() {
   return (
     <section id="pricing" style={{ padding: "100px 40px", maxWidth: "1100px", margin: "0 auto" }}>
@@ -70,12 +96,7 @@ function Pricing() {
         </p>
       </motion.div>
 
-      <div style={{
-        display: "grid",
-        gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
-        gap: "24px",
-        alignItems: "center",
-      }}>
+      <div className="pricing-grid">
         {plans.map((plan, i) => (
           <motion.div
             key={plan.name}
@@ -83,37 +104,42 @@ function Pricing() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.15, duration: 0.5 }}
-            whileHover={{ y: -6 }}
+            whileHover={{
+              y: -8,
+              boxShadow: `0 0 40px ${plan.glow}, 0 0 80px ${plan.glow}`,
+              borderColor: plan.border,
+            }}
             style={{
               background: plan.highlighted
                 ? "linear-gradient(135deg, rgba(124,58,237,0.25), rgba(109,40,217,0.15))"
                 : "rgba(255,255,255,0.03)",
               border: plan.highlighted
-                ? "2px solid #7c3aed"
-                : "1px solid rgba(124,58,237,0.15)",
+                ? `2px solid ${plan.border}`
+                : `1px solid ${plan.border}`,
               borderRadius: "20px",
               padding: plan.highlighted ? "36px 28px" : "28px",
               position: "relative",
-              boxShadow: plan.highlighted ? "0 0 40px rgba(124,58,237,0.2)" : "none",
+              boxShadow: plan.highlighted ? `0 0 40px ${plan.glow}` : "none",
+              transition: "box-shadow 0.3s ease, border-color 0.3s ease",
+              cursor: "pointer",
             }}
           >
-            {plan.highlighted && (
-              <div style={{
-                position: "absolute",
-                top: "-14px",
-                left: "50%",
-                transform: "translateX(-50%)",
-                background: "linear-gradient(135deg,#7c3aed,#6d28d9)",
-                color: "white",
-                fontSize: "0.75rem",
-                fontWeight: 700,
-                padding: "4px 16px",
-                borderRadius: "20px",
-                whiteSpace: "nowrap",
-              }}>
-                ⭐ Most Popular
-              </div>
-            )}
+            {/* BADGE */}
+            <div style={{
+              display: "inline-block",
+              background: plan.highlighted
+                ? "linear-gradient(135deg,#7c3aed,#6d28d9)"
+                : "rgba(124,58,237,0.15)",
+              color: plan.highlighted ? "white" : "#a78bfa",
+              fontSize: "0.75rem",
+              fontWeight: 700,
+              padding: "4px 14px",
+              borderRadius: "20px",
+              marginBottom: "16px",
+              border: plan.highlighted ? "none" : "1px solid rgba(124,58,237,0.3)",
+            }}>
+              {plan.badge}
+            </div>
 
             <div style={{ marginBottom: "20px" }}>
               <h3 style={{ fontSize: "1.2rem", fontWeight: 700, marginBottom: "6px" }}>{plan.name}</h3>
@@ -137,7 +163,7 @@ function Pricing() {
                   fontSize: "0.9rem",
                   marginBottom: "10px",
                 }}>
-                  <FiCheck size={16} color="#7c3aed" />
+                  <FiCheck size={16} color="#7c3aed" style={{ flexShrink: 0 }} />
                   {feature}
                 </li>
               ))}
@@ -150,7 +176,7 @@ function Pricing() {
                 width: "100%",
                 padding: "12px",
                 borderRadius: "12px",
-                border: plan.highlighted ? "none" : "2px solid rgba(124,58,237,0.5)",
+                border: plan.highlighted ? "none" : `2px solid ${plan.border}`,
                 background: plan.highlighted
                   ? "linear-gradient(135deg,#7c3aed,#6d28d9)"
                   : "transparent",
@@ -168,13 +194,5 @@ function Pricing() {
     </section>
   );
 }
-<div
-        className="pricing-grid"
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
-          gap: "24px",
-          alignItems: "center",
-        }}
-      ></div>
+
 export default Pricing;
