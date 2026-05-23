@@ -30,7 +30,7 @@ function Contact() {
         <p style={{ color: "#7c3aed", fontWeight: 600, marginBottom: "10px", letterSpacing: "0.1em", textTransform: "uppercase", fontSize: "0.85rem" }}>
           Get In Touch
         </p>
-        <h2 style={{ fontSize: "clamp(1.8rem, 4vw, 2.8rem)", fontWeight: 800 }}>
+        <h2 style={{ fonSize: "clamp(1.8rem, 4vw, 2.8rem)", fontWeight: 800 }}>
           Contact{" "}
           <span style={{ background: "linear-gradient(135deg,#7c3aed,#a78bfa)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
             ProjectPassout
@@ -61,6 +61,7 @@ function Contact() {
             { icon: <FiPhone size={18} />,
               label: "Phone / WhatsApp",
               value: "+977-9745310259", 
+              href: "https://wa.me/9779745310259",
         
         },
           ].map((item) => (
@@ -91,8 +92,8 @@ function Contact() {
           {/* SOCIAL */}
           <div style={{ display: "flex", gap: "12px", marginTop: "32px" }}>
             {[
-              { icon: <FaFacebook size={18} />, label: "Facebook" },
-              { icon: <FaWhatsapp size={18} />, label: "WhatsApp" },
+            //   { icon: <FaFacebook size={18} />, label: "Facebook" },
+            //   { icon: <FaWhatsapp size={18} />, label: "WhatsApp" },
             ].map((s) => (
               <motion.button
                 key={s.label}
