@@ -33,7 +33,7 @@ const plans = [
       "Complete frontend and backend project setup — best for university submissions.",
     features: [
       "Frontend + Backend Development",
-      "React / Next.js / Laravel / WordPress",
+      "React / Next.js / Laravel / WordPress and many more",
       "MySQL / MongoDB Database Setup",
       "Authentication System",
       "Admin Dashboard",
@@ -64,7 +64,7 @@ const plans = [
       "Performance Optimization",
       "SEO Optimization",
       "Unlimited Revisions",
-      "1 Month Support Included",
+      "Maintaince Support Included",
     ],
     highlighted: false,
     glow: "rgba(168, 85, 247, 0.15)",

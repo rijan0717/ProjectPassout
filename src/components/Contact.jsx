@@ -53,10 +53,24 @@ function Contact() {
           <h3 style={{ fontSize: "1.2rem", fontWeight: 700, marginBottom: "24px" }}>Let's talk</h3>
 
           {[
-            { icon: <FiMail size={18} />, label: "Email", value: "projectpassout@gmail.com" },
-            { icon: <FiPhone size={18} />, label: "Phone / WhatsApp", value: "+977-98XXXXXXXX" },
+            { icon: <FiMail size={18} />, 
+            label: "Email",
+            value: "projectpassout@gmail.com",
+            href: "https://mail.google.com/mail/?view=cm&to=projectpassout@gmail.com",
+        },
+            { icon: <FiPhone size={18} />,
+              label: "Phone / WhatsApp",
+              value: "+977-9745310259", 
+        
+        },
           ].map((item) => (
-            <div key={item.label} style={{ display: "flex", gap: "14px", alignItems: "flex-start", marginBottom: "24px" }}>
+            <a
+            key={item.label}
+            href={item.href}
+            target="_blank"
+            rel="noreferrer"
+            style={{ display: "flex", textDecoration:"none", gap: "14px", alignItems: "flex-start", marginBottom: "24px" }
+            }>
               <div style={{
                 background: "rgba(124,58,237,0.15)",
                 border: "1px solid rgba(124,58,237,0.3)",
@@ -71,7 +85,7 @@ function Contact() {
                 <div style={{ fontSize: "0.8rem", color: "#666", marginBottom: "2px" }}>{item.label}</div>
                 <div style={{ fontSize: "0.95rem", color: "#ddd" }}>{item.value}</div>
               </div>
-            </div>
+            </a>
           ))}
 
           {/* SOCIAL */}
