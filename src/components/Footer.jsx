@@ -127,7 +127,7 @@ function Footer() {
             </div>
             <div style={{ display: "flex", alignItems: "center", gap: "10px", color: "#666", fontSize: "0.9rem" }}>
               <FiPhone size={15} color="#7c3aed" />
-              <a href="9745310259"
+              <a href="tel:+9779745310259"
               style={{
               color: "#ddd",
               textDecoration: "none",
