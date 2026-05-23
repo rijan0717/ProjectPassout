@@ -110,24 +110,34 @@ function Footer() {
             <div style={{ display: "flex", alignItems: "center", gap: "10px", color: "#666", fontSize: "0.9rem" }}>
              <FiMail size={15} color="#7c3aed" />
 
-      <a href="https://mail.google.com/mail/?view=cm&to=projectpassout@gmail.com"
-       target="_blank"
-       rel="noreferrer"
-      style={{
-    color: "#ddd",
-    textDecoration: "none",
-    fontSize: "0.9rem",
-  }}
+         <a href="https://mail.google.com/mail/?view=cm&to=projectpassout@gmail.com"
+          target="_blank"
+          rel="noreferrer"
+          style={{
+          color: "#ddd",
+         textDecoration: "none",
+         fontSize: "0.9rem",
+        }}
   onMouseEnter={(e) => (e.target.style.color = "#7c3aed")}
   onMouseLeave={(e) => (e.target.style.color = "#ddd")}
 >
   projectpassout@gmail.com
-</a>
+               </a>
               
             </div>
             <div style={{ display: "flex", alignItems: "center", gap: "10px", color: "#666", fontSize: "0.9rem" }}>
               <FiPhone size={15} color="#7c3aed" />
-              +977-9745310259
+              <a href="9745310259"
+              style={{
+              color: "#ddd",
+              textDecoration: "none",
+              fontSize: "0.9rem",
+              }}
+      onMouseEnter={(e) => (e.target.style.color = "#7c3aed")}
+      onMouseLeave={(e) => (e.target.style.color = "#ddd")}
+               >
+           +977-9745310259
+          </a>
             </div>
           </div>
         </div>
