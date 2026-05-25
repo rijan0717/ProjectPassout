@@ -2,20 +2,42 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { FiMail, FiPhone, FiSend } from "react-icons/fi";
 import { FaFacebook, FaWhatsapp } from "react-icons/fa";
+import emailjs from "@emailjs/browser";
 
 function Contact() {
   const [form, setForm] = useState({ name: "", email: "", college: "", message: "" });
   const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // TODO: wire up EmailJS here later
+ const handleSubmit = (e) => {
+  e.preventDefault();
+  setLoading(true);
+ 
+  emailjs.send(
+    "service_gx0uyys",
+    "template_wi2k67c",
+    {
+      from_name: form.name,
+      from_email: form.email,
+      college: form.college,
+      message: form.message,
+    },
+    "G0pxfQYWCP1oAZ7-d"
+  )
+  .then(() => {
+    setLoading(false);
     setSent(true);
     setTimeout(() => setSent(false), 4000);
     setForm({ name: "", email: "", college: "", message: "" });
-  };
+  })
+  .catch((error) => {
+    setLoading(false);
+    console.error("EmailJS error:", error);
+    alert("Something went wrong. Please try again.");
+  });
+};
 
   return (
     <section id="contact" style={{ padding: "100px 40px 60px", maxWidth: "1100px", margin: "0 auto" }}>
@@ -201,7 +223,7 @@ function Contact() {
             }}
           >
             <FiSend size={16} />
-            {sent ? "Message Sent! ✓" : "Send Message"}
+              {loading ? "Sending..." : sent ? "Message Sent! ✓" : "Send Message"}
           </motion.button>
         </motion.form>
       </div>
