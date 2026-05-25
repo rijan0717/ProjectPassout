@@ -112,7 +112,7 @@ function Footer() {
             <div style={{ display: "flex", alignItems: "center", gap: "10px", color: "#666", fontSize: "0.9rem" }}>
              <FiMail size={15} color="#7c3aed" />
 
-         <a href="https://mail.google.com/mail/?view=cm&to=projectpassout@gmail.com"
+         <a href="https://mail.google.com/mail/?view=cm&to=passoutproject@gmail.com"
           target="_blank"
           rel="noreferrer"
           style={{

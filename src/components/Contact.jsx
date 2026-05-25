@@ -78,7 +78,7 @@ function Contact() {
             { icon: <FiMail size={18} />, 
             label: "Email",
             value: "projectpassout@gmail.com",
-            href: "https://mail.google.com/mail/?view=cm&to=projectpassout@gmail.com",
+            href: "https://mail.google.com/mail/?view=cm&to=passoutproject@gmail.com",
         },
             { icon: <FiPhone size={18} />,
               label: "Phone / WhatsApp",
@@ -154,9 +154,9 @@ function Contact() {
           }}
         >
           {[
-            { name: "name", placeholder: "Your Name", type: "text" },
-            { name: "email", placeholder: "Your Email", type: "email" },
-            { name: "college", placeholder: "Your College", type: "text" },
+            { name: "name", placeholder: "Your Name*", type: "text", required:true},
+            { name: "email", placeholder: "Your Email*", type: "email", required:true},
+            { name: "college", placeholder: "Your College (optional)", type: "text", required:false},
           ].map((field) => (
             <input
               key={field.name}
@@ -165,7 +165,7 @@ function Contact() {
               placeholder={field.placeholder}
               value={form[field.name]}
               onChange={handleChange}
-              required
+              required={field.required}
               style={{
                 width: "100%",
                 background: "rgba(255,255,255,0.05)",
