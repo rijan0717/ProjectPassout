@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-scroll";
 import { FiMail, FiPhone } from "react-icons/fi";
-import { FaFacebook, FaWhatsapp, FaGithub } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaTiktok } from "react-icons/fa";
 
 function Footer() {
   const links = ["hero", "projects", "pricing", "contact"];
@@ -34,13 +34,15 @@ function Footer() {
                href: "https://www.facebook.com/projectPassout",
             },
           
-              { icon: <FaWhatsapp size={18} />, 
-              label: "WhatsApp",
+              { icon: <FaTiktok size={18} />, 
+              label: "Tiktok",
+              href:"https://www.tiktok.com/@projectpassout"
 
              },
 
-              { icon: <FaGithub size={18} />,
-               label: "GitHub" 
+              { icon: <FaInstagram size={18} />,
+               label: "Instagram",
+               href:"https://www.instagram.com/projectpassout",
 
               },
             ].map((s) => (
