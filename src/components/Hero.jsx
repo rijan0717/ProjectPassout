@@ -4,7 +4,7 @@ import { Link } from "react-scroll";
 function Hero() {
   return (
     <section
-      id="hero"
+      id="home"
       style={{
         minHeight: "100vh",
         display: "flex",
@@ -116,6 +116,8 @@ function Hero() {
         transition={{ delay: 0.6 }}
         style={{ display: "flex", gap: "16px", flexWrap: "wrap", justifyContent: "center" }}
       >
+
+        
         <Link to="projects" smooth duration={600} offset={-70}>
           <motion.button
             whileHover={{ scale: 1.05 }}

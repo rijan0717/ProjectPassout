@@ -12,7 +12,7 @@ function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const links = ["Hero", "projects", "pricing", "contact"];
+  const links = ["home", "projects", "pricing", "contact"];
 
   return (
     <motion.nav
